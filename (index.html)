@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinMod Academy | Premium Financial Modeling</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg glass-nav fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fas fa-chart-line text-primary"></i> FinMod Academy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#curriculum">Curriculum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#calculators">Calculators</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#advanced">Advanced Trends</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-primary ms-3">
+                            <i class="fas fa-sun"></i> Toggle Theme
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <h1 class="display-4 fw-bold">Master Financial Modeling</h1>
+                    <p class="lead">The ultimate platform for IB analysts, PE associates, and FP&A professionals. Learn to build dynamic, bulletproof models used by top-tier advisory firms.</p>
+                    <a href="#curriculum" class="btn btn-primary btn-lg mt-3">Start Learning</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card p-4">
+                        <canvas id="heroChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid mt-5 pt-5" id="curriculum">
+        <div class="row">
+            
+            <div class="col-md-3 sidebar glass-card p-3 d-none d-md-block">
+                <h5 class="fw-bold mb-3">Curriculum</h5>
+                <ul class="nav flex-column module-list">
+                    <li class="nav-item"><a class="nav-link active" href="#mod1">1. Intro to Financial Modeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod2">2. Accounting Fundamentals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod3">3. Excel for Modeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod4">4. Three Statement Model</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod5">5. Budgeting & Forecasting</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod6">6. Ratio Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod7">7. Valuation Modeling (DCF)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod8">8. M&A Modeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod9">9. LBO Modeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod10">10. Project Finance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod11">11. VC & Startup Modeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod12">12. Real Estate (REFM)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod13">13. Risk Modeling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod14">14. Corporate Finance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mod15">15. ESG Modeling</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-9 content-area">
+                
+                <section id="mod2" class="glass-card p-5 mb-5">
+                    <h2>Module 2: Accounting Fundamentals</h2>
+                    <hr>
+                    <p>Understanding the linkage between the three primary financial statements is the bedrock of financial modeling. A change in one statement cascades through the others.</p>
+                    
+                    <h4 class="mt-4">Three Statement Linkage (Mermaid Diagram)</h4>
+                    <div class="mermaid text-center my-4">
+                        graph TD
+                            IS[Income Statement] --> |Net Income| RE[Retained Earnings on Balance Sheet]
+                            IS --> |Net Income| CFS[Cash Flow from Operations]
+                            CFS --> |Depreciation Add-back| IS
+                            CFS --> |CapEx| BS_Asset[PP&E on Balance Sheet]
+                            CFS --> |Ending Cash Balance| BS_Cash[Cash on Balance Sheet]
+                            BS_Asset --> |Depreciation Expense| IS
+                    </div>
+                </section>
+
+                <section id="mod7" class="glass-card p-5 mb-5">
+                    <h2>Module 7: Valuation Modeling</h2>
+                    <hr>
+                    <p>The Discounted Cash Flow (DCF) model is the intrinsic valuation workhorse of Wall Street. It values a company based on the present value of its future free cash flows.</p>
+                    
+                    <h4 class="mt-4">The DCF Formula</h4>
+                    <p>The enterprise value is calculated using the following formula:</p>
+                    <div class="text-center my-3">
+                        $$DCF = \sum_{t=1}^{n} \frac{CF_t}{(1+WACC)^t} + \frac{TV}{(1+WACC)^n}$$
+                    </div>
+                    <ul>
+                        <li><strong>CF_t:</strong> Unlevered Free Cash Flow in year $t$</li>
+                        <li><strong>WACC:</strong> Weighted Average Cost of Capital (Discount Rate)</li>
+                        <li><strong>TV:</strong> Terminal Value</li>
+                    </ul>
+                </section>
+
+                <section id="calculators" class="glass-card p-5 mb-5">
+                    <h2>Interactive Toolkit: WACC Calculator</h2>
+                    <hr>
+                    <p>Use this tool to calculate the Weighted Average Cost of Capital:</p>
+                    <div class="text-center my-3">
+                        $$WACC = \left( \frac{E}{V} \times R_e \right) + \left( \frac{D}{V} \times R_d \times (1 - T) \right)$$
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <label class="form-label">Cost of Equity ($R_e$) %</label>
+                            <input type="number" id="costEq" class="form-control mb-3" value="10">
+                            
+                            <label class="form-label">Cost of Debt ($R_d$) %</label>
+                            <input type="number" id="costDebt" class="form-control mb-3" value="5">
+                            
+                            <label class="form-label">Tax Rate ($T$) %</label>
+                            <input type="number" id="taxRate" class="form-control mb-3" value="21">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Weight of Equity ($E/V$) %</label>
+                            <input type="number" id="weightEq" class="form-control mb-3" value="70">
+                            
+                            <label class="form-label">Weight of Debt ($D/V$) %</label>
+                            <input type="number" id="weightDebt" class="form-control mb-3" value="30">
+                            
+                            <button class="btn btn-success w-100 mt-3" onclick="calculateWACC()">Calculate WACC</button>
+                            <h3 class="text-center mt-4 text-primary" id="waccResult">WACC: 8.19%</h3>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
