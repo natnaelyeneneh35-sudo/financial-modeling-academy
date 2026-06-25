@@ -1,0 +1,98 @@
+:root {
+    --bg-light: #f4f7f6;
+    --text-light: #2c3e50;
+    --glass-bg-light: rgba(255, 255, 255, 0.7);
+    --glass-border-light: rgba(255, 255, 255, 0.3);
+    
+    --bg-dark: #0f172a;
+    --text-dark: #f8fafc;
+    --glass-bg-dark: rgba(30, 41, 59, 0.7);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+
+    --primary-color: #3b82f6;
+    --accent-color: #10b981;
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Dark Mode Defaults */
+[data-theme="dark"] body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
+}
+
+[data-theme="light"] body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    background-image: radial-gradient(circle at top right, #e2e8f0, #f8fafc);
+}
+
+/* Glassmorphism Classes */
+.glass-nav, .glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .glass-nav, [data-theme="dark"] .glass-card {
+    background: var(--glass-bg-dark);
+    border: 1px solid var(--glass-border-dark);
+}
+
+[data-theme="light"] .glass-nav, [data-theme="light"] .glass-card {
+    background: var(--glass-bg-light);
+    border: 1px solid var(--glass-border-light);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    padding-top: 80px;
+}
+
+.hero-text h1 {
+    background: -webkit-linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Sidebar & Navigation */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.module-list .nav-link {
+    color: inherit;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+}
+
+.module-list .nav-link:hover, .module-list .nav-link.active {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Inputs & Forms */
+.form-control {
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid var(--primary-color);
+}
+
+.form-control:focus {
+    background-color: transparent;
+    color: inherit;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+[data-theme="dark"] .form-control { color: white; }
